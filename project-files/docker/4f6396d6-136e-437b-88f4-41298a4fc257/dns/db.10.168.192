@@ -1,0 +1,15 @@
+;
+; BIND reverse data file for local loopback interface
+;
+$TTL	604800
+@	IN	SOA	arya.stark.lan. root.stark.lan. (
+			      1		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@	IN	NS	arya.stark.lan.
+11	IN	PTR	arya.stark.lan.
+10	IN	PTR	ned.stark.lan.
+12	IN	PTR	robb.stark.lan.

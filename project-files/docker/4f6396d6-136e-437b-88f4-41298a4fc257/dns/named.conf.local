@@ -1,0 +1,48 @@
+//
+// Do any local configuration here
+//
+
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//include "/etc/bind/zones.rfc1918";
+
+key "stark.lan" {
+	algorithm hmac-sha256;
+	secret "qlpfWL8Qx2e6/OeV/L70eJB9+gUrV1P7sGY7YKOvXGA=";
+};
+
+zone "stark.lan" {
+    type master;
+    file "db.stark.lan";
+    allow-update {key "stark.lan";};
+};
+
+zone "10.168.192.in-addr.arpa" {
+    type master;
+    file "db.10.168.192";
+    allow-update {key "stark.lan";};
+};
+
+zone "lannister.lan" {
+    type master;
+    file "db.lannister.lan";
+    allow-update {key "stark.lan";};
+};
+
+zone "11.168.192.in-addr.arpa" {
+    type master;
+    file "db.11.168.192";
+    allow-update {key "stark.lan";};
+};
+
+zone "targaryen.lan" {
+    type master;
+    file "db.targaryen.lan";
+    allow-update {key "stark.lan";};
+};
+
+zone "57.168.192.in-addr.arpa" {
+    type master;
+    file "db.57.168.192";
+    allow-update {key "stark.lan";};
+};

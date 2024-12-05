@@ -1,0 +1,65 @@
+{
+    "Dhcp4": {
+        "interfaces-config": {
+            "interfaces": [
+                "eth0"
+            ],
+            "dhcp-socket-type": "raw"
+        },
+        "subnet4": [
+            {
+                "pools": [
+                    {
+                        "pool": "192.168.10.30-192.168.10.80",
+                        "client-class": "Conocidos"
+                    },
+                    {
+                        "pool": "192.168.10.101-192.168.10.230",
+                        "client-class": "noConocidos"
+                    }
+                ],
+                //"valid-lifetime": 86400,
+                //"renew-timer": 21600,
+                //"rebind-timer": 43200,
+                "subnet": "192.168.10.0/24",
+                "id": 1,
+                "option-data": [
+                    {
+                        "name": "domain-name-servers",
+                        "data": "192.168.10.11",
+                        "always-send": true
+                    }
+                    //{
+                    //    "name": "routers",
+                    //    "data": "192.168.10.254",
+                    //    "always-send": true
+                    //}
+                ],
+                "client-classes": [
+                    {
+                        "name": "Conocidas",
+                        "option-data": [
+                            {
+                                "name": "valid-lifetime",
+                                "data": "86400"
+                            },
+                            {
+                                "name": "renew-timer",
+                                "data": "86400"
+                            },
+                            {
+                                "name": "renew-timer",
+                                "data": "43200"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "loggers": [
+                {
+                    "name": "*",
+                    "severity": "DEBUG"
+                }
+            ]
+        }
+    }

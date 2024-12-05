@@ -1,0 +1,84 @@
+{
+    "DhcpDdns": {
+        "ip-address": "127.0.0.1",
+        "port": 53001,
+        "dns-server-timeout": 500,
+        "ncr-protocol": "UDP",
+        "ncr-format": "JSON",
+        "tsig-keys": [
+            {
+                "name": "stark.lan",
+                "algorithm": "hmac-sha256",
+                "secret": "qlpfWL8Qx2e6/OeV/L70eJB9+gUrV1P7sGY7YKOvXGA="
+            }
+        ],
+        "forward-ddns": {
+            "ddns-domains": [
+                {
+                    "name": "stark.lan.",
+                    "key-name": "stark.lan",
+                    "dns-servers": [
+                        {
+                            "ip-address": "192.168.10.11",
+                            "port": 53
+                        }
+                    ]
+                },
+                {
+                    "name": "lannister.lan.",
+                    "key-name": "stark.lan",
+                    "dns-servers": [
+                        {
+                            "ip-address": "192.168.10.11",
+                            "port": 53
+                        }
+                    ]
+                },
+                {
+                    "name": "targaryen.lan.",
+                    "key-name": "stark.lan",
+                    "dns-servers": [
+                        {
+                            "ip-address": "192.168.10.11",
+                            "port": 53
+                        }
+                    ]
+                }
+            ]
+        },
+        "reverse-ddns": {
+            "ddns-domains": [
+                {
+                    "name": "10.168.192.in-addr.arpa.",
+                    "key-name": "stark.lan",
+                    "dns-servers": [
+                        {
+                            "ip-address": "192.168.10.11",
+                            "port": 53
+                        }
+                    ]
+                },
+                {
+                    "name": "11.168.192.in-addr.arpa.",
+                    "key-name": "stark.lan",
+                    "dns-servers": [
+                        {
+                            "ip-address": "192.168.10.11",
+                            "port": 53
+                        }
+                    ]
+                },
+                {
+                    "name": "57.168.192.in-addr.arpa.",
+                    "key-name": "stark.lan",
+                    "dns-servers": [
+                        {
+                            "ip-address": "192.168.10.11",
+                            "port": 53
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
